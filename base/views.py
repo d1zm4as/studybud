@@ -26,8 +26,8 @@ def room(request,pk):
 def createRoom(request):
     form = RoomForm()
     if request.method =='POST':
-        form = RoomForm(request.Post)
-        if form.isvalid():
+        form = RoomForm(request.POST)
+        if form.is_valid():
             form.save()
             return redirect('home')
     context  = {'form':form}
